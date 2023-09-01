@@ -1,5 +1,6 @@
 name: Iron Binary Build
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       # try to keep iron and rolling(main) in sync
@@ -12,7 +13,6 @@ on:
   schedule:
     # Run every morning to detect flakiness and broken dependencies
     - cron: '13 4 * * *'
-
 jobs:
   iron_binary:
     name: iron binary build
